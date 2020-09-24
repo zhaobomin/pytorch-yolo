@@ -4,9 +4,14 @@ from model_yolo import yolo_model
 from PIL import Image
 
 
-cfg = 'weights/yolo/yolov3_plate.cfg'
-weights = 'weights/yolo/yolov3_plate.pth'
+cfg = 'weights/yolo/yolov3.cfg'
+weights = 'weights/yolo/yolov3.weights'
 names = 'weights/yolo/coco.names'
+
+cfg = 'weights/yolov3_hat/yolov3_hat.cfg'
+weights = 'weights/yolov3_hat/yolov3_hat.weights'
+names = 'weights/yolov3_hat/yolov3_hat.names'
+
 
 if __name__ == '__main__':
 
