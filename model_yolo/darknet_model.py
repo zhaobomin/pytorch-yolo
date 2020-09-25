@@ -53,6 +53,8 @@ def create_modules(module_defs):
                 modules.add_module(f"leaky_{module_i}", nn.LeakyReLU(0.1))
             if module_def["activation"] == "relu":
                 modules.add_module(f"leaky_{module_i}", nn.ReLU())
+            if module_def["activation"] == "mish":
+                modules.add_module(f"mish_{module_i}", Mish())
 
         elif module_def["type"] == "maxpool":
             if ',' in module_def["size"]:
@@ -107,6 +109,15 @@ def create_modules(module_defs):
         output_filters.append(filters)
 
     return hyperparams, module_list
+
+
+class Mish(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, x):
+        x = x * (torch.tanh(torch.nn.functional.softplus(x)))
+        return x
 
 
 class Upsample(nn.Module):
