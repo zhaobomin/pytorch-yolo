@@ -55,6 +55,8 @@ def create_modules(module_defs):
                 modules.add_module(f"leaky_{module_i}", nn.ReLU())
             if module_def["activation"] == "mish":
                 modules.add_module(f"mish_{module_i}", Mish())
+            if module_def["activation"] == "logistic":
+                modules.add_module(f"mish_{module_i}", nn.Sigmoid())
 
         elif module_def["type"] == "maxpool":
             if ',' in module_def["size"]:
