@@ -4,10 +4,6 @@ from model_yolo import yolo_model
 from PIL import Image
 
 
-cfg = 'weights/yolo/yolov3.cfg'
-weights = 'weights/yolo/yolov3.weights'
-names = 'weights/yolo/coco.names'
-
 cfg = 'weights/yolov3_hat/yolov3_hat.cfg'
 weights = 'weights/yolov3_hat/yolov3_hat.weights'
 names = 'weights/yolov3_hat/yolov3_hat.names'
@@ -15,6 +11,12 @@ names = 'weights/yolov3_hat/yolov3_hat.names'
 cfg = 'weights/yolov4/yolov4-sam-mish.cfg'
 weights = 'weights/yolov4/yolov4-sam-mish.weights'
 names = 'weights/yolov4/coco.names'
+
+
+cfg = 'weights/yolov3/yolov3.cfg'
+weights = 'weights/yolov3/yolov3.weights'
+names = 'weights/yolov3/coco.names'
+
 
 cfg = 'weights/yolov4/yolov4.cfg'
 weights = 'weights/yolov4/yolov4.weights'
